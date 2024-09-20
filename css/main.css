@@ -39,24 +39,33 @@ body {
   }
 
 }
+
+
 .titulo {
-  margin-bottom: 70px;
   font-family: "Arial Narrow", Arial, sans-serif;
+  z-index: 1000; 
   color: yellow;
-  position: absolute;
   font-weight: bold;
-  letter-spacing: 2px;
-  opacity: 0;
-  animation: fadeIn 3s ease-in-out forwards;
+  letter-spacing: 3px;
   text-align: center;
-  z-index: 1000; /* Asegura que esté delante */
-  
-  /* Agregar bordes blancos a las letras */
-  text-shadow: 
-    -2px -2px 0 #000,  
-    2px -2px 0 #000,  
-    -2px 2px 0 #000,  
-    2px 2px 0 #000;
+  position: absolute;
+   width: 100%;
+  animation: scrollText 30s linear infinite;
+    text-shadow: 
+      -2px -2px 0 #000,  
+      2px -2px 0 #000,  
+      -2px 2px 0 #000,  
+      2px 2px 0 #000;
+}
+@keyframes scrollText {
+  0% { top: 100%; }
+  100% { top: -100%; }
+}
+@media (max-width: 600px) {
+  .titulo {
+      font-size: 4vw;
+      letter-spacing: 2px;
+  }
 }
 
 @keyframes fadeIn {
